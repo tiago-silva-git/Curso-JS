@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalidade</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <h1>Verificação de Nacionalidade</h1>
+
+    Seu pais é: <input type="text" id="pais">
+    <button id="nac">Verificar</button>
+    <div id="res">Informe sua nacionalidade</div>
+    <script>
+
+        var a = window.document.getElementById('nac')
+        a.addEventListener('click', nacionalidade)
+
+    document.getElementById("pais")
+    .addEventListener("keyup", function(event) {
+    event.preventDefault();
+    if (event.keyCode === 13) {
+        document.getElementById("nac").click();
+        }
+    });
+
+        function nacionalidade() {
+            var regiao = window.document.querySelector('input#pais')
+            var res = window.document.querySelector('div#res')
+            var s = regiao.value
+
+            if (s == 'Brasil') {
+                res.innerHTML = `Você mora em ${s} então você é brasileiro`
+            } else if (s == 'brasil') {
+                res.innerHTML = `Você mora em ${s} então você é brasileiro`
+            } else if (s == '') {
+                res.innerHTML = `Digite seu pais no campo primeiro.`
+            } else {
+                res.innerHTML = `Você mora em ${s} então você é estrangeiro`
+            }
+        }
+    </script>
+</body>
+</html>
